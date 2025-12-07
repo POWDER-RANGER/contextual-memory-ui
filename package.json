@@ -1,0 +1,50 @@
+{
+  "name": "contextual-memory-ui",
+  "version": "1.0.0",
+  "description": "AI Memory Infrastructure Platform - Search, analyze, and visualize conversations across ChatGPT, Claude, Perplexity, and Gemini",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8000 -c-1",
+    "dev": "npx http-server -p 8000 -c-1 -o",
+    "serve": "python -m http.server 8000",
+    "test": "echo \"No tests configured yet\" && exit 0",
+    "lint": "echo \"No linting configured yet\" && exit 0",
+    "format": "echo \"No formatting configured yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/POWDER-RANGER/contextual-memory-ui.git"
+  },
+  "keywords": [
+    "ai",
+    "memory",
+    "conversation",
+    "search",
+    "analytics",
+    "chatgpt",
+    "claude",
+    "perplexity",
+    "gemini",
+    "cognitive-trajectory",
+    "momentum-tracking",
+    "ai-assistant",
+    "conversation-management",
+    "knowledge-base",
+    "react",
+    "single-page-app"
+  ],
+  "author": "POWDER-RANGER",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/POWDER-RANGER/contextual-memory-ui/issues"
+  },
+  "homepage": "https://github.com/POWDER-RANGER/contextual-memory-ui#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "private": false
+}
