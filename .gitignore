@@ -1,0 +1,103 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Production build
+build/
+dist/
+out/
+.next/
+.nuxt/
+.cache/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+.hypothesis/
+.pytest_cache/
+junit.xml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+.cache/
+
+# Local development
+.local/
+local/
+*.local
+
+# User data (for privacy)
+user_data/
+conversations/
+imports/
+exports/
+backups/
+
+# Browser extensions artifacts
+*.crx
+*.xpi
+
+# Documentation build
+docs/_build/
+site/
+
+# Serverless
+.serverless/
+
+# Docker
+*.dockerignore
+docker-compose.override.yml
+
+# Misc
+*.zip
+*.tar.gz
+*.rar
