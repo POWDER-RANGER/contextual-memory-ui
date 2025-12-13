@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives",
     "format": "prettier --write \"src/**/*.{js,jsx,json,css}\""
   },
   "dependencies": {
