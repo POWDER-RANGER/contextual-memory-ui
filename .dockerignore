@@ -1,0 +1,71 @@
+# Node modules
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build output
+dist
+build
+out
+.next
+.nuxt
+.cache
+
+# Testing
+coverage
+.nyc_output
+junit.xml
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDEs
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# Docs
+README.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+IMPLEMENTATION_GUIDE.md
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+
+# Deployment configs (included separately in image)
+deploy/windows
+deploy/linux
+deploy/macos
+deploy/aws
+deploy/azure
+
+# User data
+user_data
+conversations
+imports
+exports
+backups
+
+# Misc
+*.log
+*.tmp
+*.bak
+*.zip
+*.tar.gz

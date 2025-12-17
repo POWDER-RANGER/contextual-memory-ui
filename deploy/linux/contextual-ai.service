@@ -1,0 +1,17 @@
+[Unit]
+Description=Contextual AI Memory Infrastructure
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/contextual-ai
+ExecStart=/usr/bin/npx serve -s /var/www/contextual-ai -l 3000
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

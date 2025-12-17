@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  contextual-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: contextual-ai
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "com.contextual.description=AI Memory Infrastructure Platform"
+      - "com.contextual.version=1.0.0"
+    networks:
+      - contextual-network
+
+networks:
+  contextual-network:
+    driver: bridge

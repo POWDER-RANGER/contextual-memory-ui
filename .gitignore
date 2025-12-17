@@ -97,6 +97,23 @@ site/
 *.dockerignore
 docker-compose.override.yml
 
+# Platform-specific build artifacts
+# Windows
+obj/
+bin/
+*.exe
+*.dll
+*.pdb
+
+# Linux
+*.o
+*.so
+*.a
+
+# macOS
+*.dylib
+DerivedData/
+
 # Misc
 *.zip
 *.tar.gz
