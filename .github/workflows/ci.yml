@@ -64,6 +64,9 @@ jobs:
           retention-days: 7
 
   deploy:
+      permissions:
+      contents: write
+
     runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -79,7 +82,6 @@ jobs:
       
       - name: Deploy to GitHub Pages
             permissions:
-        contents: write
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
