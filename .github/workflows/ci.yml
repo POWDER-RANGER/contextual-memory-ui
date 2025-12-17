@@ -5,9 +5,7 @@ on:
     branches: [main, develop]
   pull_request:
     branches: [main]
-  workflow_dispatch:
-
-jobs:
+  workflow_dispatcjobs:
   lint-and-test:
     runs-on: ubuntu-latest
     strategy:
