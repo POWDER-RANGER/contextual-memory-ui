@@ -1,28 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contextual - AI Memory Infrastructure</title>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- Optional: Set this to your actual backend URL in production -->
-    <!-- <script>window.CONTEXTUAL_API_URL = 'https://your-backend.com';</script> -->
-    <style>
-        /* Full CSS from paste.txt preserved here (truncated in this snippet for brevity) */
-    </style>
-
-<link rel="stylesheet" href="https://powder-ranger.github.io/assets/brand-pages.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0000">
+  <meta name="description" content="Contextual is a local-first project for organizing and exploring conversations across AI assistants. Review its documented scope, source code, and setup path.">
+  <meta property="og:title" content="CONTEXTUAL — AI MEMORY INFRASTRUCTURE">
+  <meta property="og:description" content="A project for turning scattered AI conversations into searchable, connected knowledge.">
+  <title>CONTEXTUAL — AI MEMORY INFRASTRUCTURE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://powder-ranger.github.io/assets/brand-pages.css">
+  <style>
+    :root{--bg:#0a0000;--panel:#120000;--panel2:#1a0000;--red:#E31C23;--ink:#F2E8E8;--mute:#A08080;--line:#4A1010;--display:'Oswald',Impact,'Arial Narrow',sans-serif;--mono:'Share Tech Mono',ui-monospace,monospace}
+    *{box-sizing:border-box;border-radius:0!important}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display);text-transform:uppercase;letter-spacing:.045em;line-height:1.45}
+    a{color:inherit;text-underline-offset:4px}
+    a:focus-visible{outline:2px solid #fff;outline-offset:4px}
+    nav{position:sticky;top:5px;z-index:20;background:rgba(10,0,0,.98);border-bottom:3px solid var(--red)}
+    .nav-inner{width:min(1100px,100%);min-height:50px;margin:auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{font-weight:700;letter-spacing:.18em;color:var(--red);text-decoration:none}
+    .nav-links{display:flex;flex-wrap:wrap;gap:18px;font: .68rem var(--mono);letter-spacing:.1em;color:var(--mute)}
+    .nav-links a{text-decoration:none}.nav-links a:hover{color:#fff}
+    main{width:min(1100px,100%);margin:auto;padding:54px 20px 72px}
+    .stripe{height:8px;background:var(--red);margin-bottom:26px}
+    .kicker{font: .72rem var(--mono);letter-spacing:.18em;color:var(--red)}
+    h1{font-size:clamp(2.8rem,9vw,6.4rem);line-height:.92;letter-spacing:.025em;margin:18px 0}
+    h1 span{color:var(--red)}
+    .lead{max-width:760px;color:var(--mute);font-size:clamp(1rem,2.5vw,1.25rem);border-left:6px solid var(--red);padding-left:18px;margin:24px 0 30px}
+    .actions{display:flex;flex-wrap:wrap;gap:0;margin-bottom:28px}
+    .button{display:inline-block;padding:13px 17px;border:3px solid var(--red);font: .72rem var(--mono);letter-spacing:.1em;text-decoration:none;background:var(--panel)}
+    .button.primary{background:var(--red);color:#fff}
+    .button+.button{margin-left:-3px}
+    .button:hover{background:#fff;color:#000}
+    .notice{padding:18px;border:3px solid var(--line);background:var(--panel);color:var(--mute);max-width:850px}
+    .notice strong{color:var(--ink)}
+    section{padding:34px 0;border-top:3px solid var(--line)}
+    h2{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 18px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:3px solid var(--red);border-left:3px solid var(--red)}
+    .card{padding:22px;background:var(--panel);border-right:3px solid var(--red);border-bottom:3px solid var(--red);min-width:0}
+    .card h3{font-size:1.15rem;margin:0 0 8px}
+    .card p,.copy{color:var(--mute);margin:0}
+    .label{font: .68rem var(--mono);color:var(--red);letter-spacing:.12em;margin-bottom:10px}
+    .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:3px solid var(--red)}
+    .step{padding:18px;border-right:3px solid var(--red);background:var(--panel)}
+    .step:last-child{border-right:0}
+    .step b{display:block;color:var(--red);font-size:1.4rem;margin-bottom:8px}
+    footer{border-top:8px solid var(--red);padding:26px 20px;text-align:center;font: .68rem var(--mono);letter-spacing:.12em;color:var(--mute)}
+    footer a{color:var(--red)}
+    @media(max-width:680px){.nav-inner{align-items:flex-start;flex-direction:column;padding-top:12px;padding-bottom:12px}.nav-links{gap:12px}.grid,.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:3px solid var(--red)}.step:last-child{border-bottom:0}.button+.button{margin-left:0;margin-top:-3px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
 </head>
 <body>
-    <div id="root"></div>
-
-    <script type="text/babel">
-        // Full React + API client + components code from paste.txt goes here
-        // (Contextual Memory System, 2500+ lines)
-    </script>
-
-<script defer src="https://powder-ranger.github.io/assets/brand-pages.js" data-repo="contextual-memory-ui"></script>
+  <nav aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="brand" href="https://powder-ranger.github.io/">POWDER-RANGER</a>
+      <div class="nav-links">
+        <a href="https://powder-ranger.github.io/">HOME</a>
+        <a href="https://powder-ranger.github.io/pages.html">PAGES</a>
+        <a href="https://github.com/POWDER-RANGER/contextual-memory-ui">SOURCE REPOSITORY</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="stripe" aria-hidden="true"></div>
+    <p class="kicker">// PROJECT OVERVIEW · CONTEXTUAL MEMORY</p>
+    <h1>YOUR CONVERSATIONS.<br><span>CONNECTED.</span></h1>
+    <p class="lead">Contextual is a project for organizing and exploring conversations across AI assistants—so ideas, recurring topics, references, and decisions are easier to find over time.</p>
+    <div class="actions">
+      <a class="button primary" href="https://github.com/POWDER-RANGER/contextual-memory-ui">VIEW SOURCE</a>
+      <a class="button" href="https://github.com/POWDER-RANGER/contextual-memory-ui#readme">READ PROJECT DOCUMENTATION</a>
+    </div>
+    <div class="notice"><strong>STATUS / READ THIS FIRST</strong><br>This page is a project overview, not a hosted memory service. The repository's current entry file contains placeholder application code, so this landing page does not claim that imports, search, analytics, or a live knowledge graph are currently operational. Check the source and documentation before relying on any listed capability.</div>
+    <section id="purpose">
+      <p class="label">// 01 — PURPOSE</p>
+      <h2>A MAP OF YOUR AI KNOWLEDGE</h2>
+      <p class="copy">AI conversations often become scattered across products, exports, and separate histories. Contextual explores a unified way to search and connect that material, track how topics evolve, and preserve useful context without presenting a marketing page as proof of a working backend.</p>
+    </section>
+    <section id="scope">
+      <p class="label">// 02 — DOCUMENTED SCOPE</p>
+      <h2>WHAT THE PROJECT SETS OUT TO DO</h2>
+      <div class="grid">
+        <article class="card"><p class="label">SEARCH</p><h3>ONE FINDING SURFACE</h3><p>Explore conversations from multiple assistant exports through a consistent search experience.</p></article>
+        <article class="card"><p class="label">CONNECTIONS</p><h3>TOPICS AND REFERENCES</h3><p>Organize recurring concepts and links between conversations into a navigable knowledge structure.</p></article>
+        <article class="card"><p class="label">TIME</p><h3>IDEAS IN CONTEXT</h3><p>Study how topics, questions, and decisions change across a timeline instead of treating each chat as isolated.</p></article>
+        <article class="card"><p class="label">PORTABILITY</p><h3>OPEN FORMATS</h3><p>Review the repository for its intended import and export paths before using personal conversation data.</p></article>
+      </div>
+    </section>
+    <section id="start">
+      <p class="label">// 03 — START HERE</p>
+      <h2>VERIFY BEFORE YOU IMPORT</h2>
+      <div class="steps">
+        <div class="step"><b>01</b>Read the README and inspect the current implementation.</div>
+        <div class="step"><b>02</b>Review dependencies, storage behavior, and any external service requirements.</div>
+        <div class="step"><b>03</b>Use only test exports until data handling and functionality are verified.</div>
+      </div>
+      <p class="copy" style="margin-top:18px">The repository is the source of truth for implementation status. This page intentionally avoids sample metrics, fabricated live states, and claims of completed functionality that have not been verified.</p>
+    </section>
+  </main>
+  <footer>CONTEXTUAL · AI MEMORY INFRASTRUCTURE · <a href="https://github.com/POWDER-RANGER/contextual-memory-ui">SOURCE</a> · <a href="https://powder-ranger.github.io/">POWDER-RANGER</a></footer>
+  <script defer src="https://powder-ranger.github.io/assets/brand-pages.js" data-repo="contextual-memory-ui"></script>
 </body>
 </html>
